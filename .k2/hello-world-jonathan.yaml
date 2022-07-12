@@ -1,0 +1,30 @@
+apiVersion: platform.segment.com/v1alpha1
+kind: SegmentApplicationExperimental
+metadata:
+  name: hello-world-jonathan
+  namespace: hello-world-jonathan
+spec:
+  targets:
+    - name: stage
+      cluster: stage:us-west-2:piw
+      replicatedService:
+        iamRoleName: hello-world-jonathan
+        env: &env
+          DATADOG_ADDRESS: $(NODE_IP):8125
+        autoScale:
+          minReplicas: 1
+          maxReplicas: 1
+          resources:
+            - resource: cpu
+              utilization: 50
+            - resource: memory
+              utilization: 50
+        mainContainer: &container
+          imageName: hello-world-jonathan
+          imageRegistry: 528451384384.dkr.ecr.us-west-2.amazonaws.com
+          ports:
+          - name: http
+            containerPort: 3000
+          healthCheckPath: "/internal/health"
+          ctlstore:
+             disabled: true

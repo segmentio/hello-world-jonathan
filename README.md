@@ -1,6 +1,6 @@
-# hello-world-jonathan
+# hello_world_jonathan
 
-hello-world-jonathan is a simple example of a production ready RPC service in Go. Instead of attempting to abstract away the details of bootstrapping a new service like `kit`, this is meant to be used as a blueprint of how to piece together various libraries.
+hello_world_jonathan is a simple example of a production ready RPC service in Go. Instead of attempting to abstract away the details of bootstrapping a new service like `kit`, this is meant to be used as a blueprint of how to piece together various libraries.
 
 # Libraries
 
@@ -21,14 +21,14 @@ hello-world-jonathan is a simple example of a production ready RPC service in Go
 ```
 # Ensure your GOPATH is configured correctly.
 # https://github.com/golang/go/wiki/SettingGOPATH
-go get github.com/segmentio/hello-world-jonathan
-cd $GOPATH/src/github.com/segmentio/hello-world-jonathan
+go get github.com/segmentio/hello_world_jonathan
+cd $GOPATH/src/github.com/segmentio/hello_world_jonathan
 make test
 ```
 
-# Running hello-world-jonathan
+# Running hello_world_jonathan
 
-After completing the [Get Started](#get-started) section follow these steps for running the `hello-world-jonathan` rpc server
+After completing the [Get Started](#get-started) section follow these steps for running the `hello_world_jonathan` rpc server
 
 To execute rpc for `HelloWorld.HelloWorld`
 
@@ -43,7 +43,7 @@ To execute rpc for `HelloWorld.Hello`
 # In console window 2
 curl --header "Content-Type: application/json" \
   --request POST \
-  --data '{"jsonrpc": "2.0", "method": "HelloWorld.Hello", "params": "prateek", "id": "foo"}' \
+  --data '{"jsonrpc": "2.0", "method": "HelloWorld.Hello", "params": "Jonathan", "id": "foo"}' \
 http://localhost:3000/rpc
 ```
 
