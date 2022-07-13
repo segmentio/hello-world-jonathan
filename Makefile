@@ -23,7 +23,7 @@ GOTESTFLAGS += -v
 endif
 
 export GO111MODULE=on
-export CGO_ENABLED = 1
+export CGO_ENABLED = 0
 export GOPRIVATE=github.com/segment*
 
 .PHONY: build
