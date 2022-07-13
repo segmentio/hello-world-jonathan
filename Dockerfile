@@ -27,4 +27,4 @@ COPY --from=chamber /chamber /bin/chamber
 COPY --from=builder /build/service /bin/service
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
-ENTRYPOINT ["/bin/chamber", "exec", "hello-world-jonathan", "--", "/bin/service"]
+ENTRYPOINT ["/bin/service"]
